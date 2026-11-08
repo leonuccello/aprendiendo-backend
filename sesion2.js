@@ -22,12 +22,12 @@ console.log(10 * 3);
 console.log(10 / 3);
 console.log(10 % 3);
 
-//logic operators
+//operadores comparadores
 
 console.log(5 > 3);
 console.log(5 === 5);
 console.log(5 === "5");
-console.log(5 != 3);
+console.log(5 !== 3);
 
 //comparadores
 
@@ -53,9 +53,9 @@ console.log(esFinDeSemana);
 //ejercicio 1
 
 const numero0 = 7;
-esPar = numero0%2;
+const resto = numero0%2;
 
-if(esPar === 0){
+if(resto === 0){
     console.log("Es par");
 } else {
     console.log("Es impar");
@@ -87,7 +87,7 @@ const esCliente = true;
 const montoMinimo = 10000;
 const conDescuento = precio02-(precio02*15/100);
 
-if(precio02>=montoMinimo && esCliente === true){
+if(precio02 > montoMinimo && esCliente){
     console.log("Con el descuento del 15% el costo es: " + conDescuento);
 } else {
     console.log("No hay descuento, el costo es: " + precio02);
@@ -98,14 +98,16 @@ if(precio02>=montoMinimo && esCliente === true){
 
 //ejercicio 5
 
-const notaExamen = 9;
+const notaExamen = 8;
 
-if(notaExamen>9&&notaExamen<10){
-    console.log("Excelente");
+if(notaExamen >= 9&&notaExamen <= 10){
+    console.log("Excelente"); 
 } else if(notaExamen>=6){
     console.log("Aprobado");
 } else {
     console.log("Desaprobado");
 }
+
+// fin de la segunda sesion de ejercicios
 
 
