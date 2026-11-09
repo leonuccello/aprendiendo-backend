@@ -1,18 +1,25 @@
 const gastos = [];
 
-function agregarGasto(index, descripcion, monto, categoria, fecha) {
-    gastos.push({index, descripcion, monto, categoria, fecha});
+function agregarGasto(descripcion, monto, categoria, fecha) {
+    let seAgregoElGasto = false;
+    if(monto>0 && typeof monto === "number") {
+        gastos.push({descripcion, monto, categoria, fecha});
+        seAgregoElGasto = true;
+    } else {
+        console.log("El monto debe ser mayor a 0");
+    }
+    return seAgregoElGasto;
 }
 
 function listarGastos(gastos) {
     for(const gasto of gastos) {
-        console.log(`${gasto.index}  ${gasto.descripcion}: $${gasto.monto} de ${gasto.categoria} - ${gasto.fecha} `);
+        console.log(` ${gasto.descripcion}: $${gasto.monto} de ${gasto.categoria} - ${gasto.fecha} `);
     }
 }
 
-agregarGasto(1, "Alquiler", 50000, "Vivienda", "2024-06-01");
-agregarGasto(2, "Supermercado", 15000, "Alimentación", "2024-06-02");
-agregarGasto(3, "Transporte", 5000, "Transporte", "2024-06-03");
+agregarGasto("Alquiler", 50000, "Vivienda", "2024-06-01");
+agregarGasto("Supermercado", 15000, "Alimentación", "2024-06-02");
+agregarGasto("Transporte", 5000, "Transporte", "2024-06-03");
 listarGastos(gastos);
 
 function totalGastos(gastos) {
@@ -47,7 +54,19 @@ function mayorGasto(gastos) {
             mayor = gasto;
         }
     }
+    if(gastos.length === 0) {
+        mayor = null;
+    }
     return mayor;
 }
 
 console.log(`El mayor gasto es: ${mayorGasto(gastos).descripcion} por $${mayorGasto(gastos).monto}`);   
+console.log(mayorGasto([]));
+
+
+//correccion de agregarGastos()
+
+agregarGasto("Cine", -500, "Entretenimiento", "2024-06-04");
+agregarGasto("Restaurante", 0, "Alimentación", "2024-06-05");
+agregarGasto("Gas", "500", "Vivienda", "2024-06-06");
+listarGastos(gastos);
