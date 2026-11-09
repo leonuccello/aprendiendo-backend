@@ -120,3 +120,20 @@ console.log(esPrimo(7));
 console.log(esPrimo(10));
 console.log(esPrimo(13));
 
+//Ejercicio 5: FizzBuzz
+
+const maximo = 30;
+let mensaje = "";
+
+for(let i = 1; i <= maximo; i++){
+    if(i%3 === 0 && i%5 === 0){
+        mensaje = "FizzBuzz";
+    } else if(i%3 === 0) {
+        mensaje = "Fizz";
+    } else if(i%5 === 0){
+        mensaje = "Buzz";
+    } else {
+        mensaje = i;
+    }
+    console.log(mensaje);
+}
