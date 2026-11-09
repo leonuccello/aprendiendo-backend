@@ -54,8 +54,10 @@ for( let i = 0;i < palabra.length; i++){
 //ejercicio 1: tabla de multiplicar
 
 function tablaDel(numero){
+    let mensaje001 = ``;
     for(let i = 0; i <= 10; i++){
-        console.log(numero*i);
+        mensaje001 = `${numero} X ${i} = ${numero*i}`;
+        console.log(mensaje001);
     }
 }
 
@@ -99,19 +101,19 @@ console.log(contarVocales(word2.toLowerCase()));
 //Ejercicio 4: Es primo
 
 function esPrimo(numero){
-    let esPrimo = true;
-    let mensaje = "";
+    let primo = true;
+    
+    if (numero < 2){
+        primo = false;
+    }
+
     for(let i = 2; i < numero; i++){
         if(numero%i === 0){
-            esPrimo = false;
+            primo = false;
         }
     }
-    if(esPrimo === true){
-        mensaje = "Es primo";
-    } else {mensaje = "No es primo";
 
-    }
-    return mensaje;
+    return primo;
 }
 
 console.log(esPrimo(1));
@@ -137,3 +139,10 @@ for(let i = 1; i <= maximo; i++){
     }
     console.log(mensaje);
 }
+
+tablaDel(7);
+tablaDel(10);
+
+console.log(esPrimo(0));
+console.log(esPrimo(1));
+console.log(esPrimo(7));
